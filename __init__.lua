@@ -1,4 +1,5 @@
 -- Made by sul6an#3330 thanks for h1-dev and h1 community for help
+-- https://github.com/BLANKxSS/iSnip-H1-Mod-COD4-REMASTER
 -- i now the code not that good but it work you can edit how you want good luck ;)
 if (game:getdvar("gamemode") ~= "mp") then
     return
