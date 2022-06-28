@@ -8,12 +8,7 @@ level:onnotify("player_spawned", function(player)
     setSnip(player)
     removePerks(player)
     player:clientiprintlnbold("Welcome ^:"..player.name.. " ^7to Snip Mod")
-    -- oldorg = player.origin
-    -- -- game:distance(oldorg, oldorg)
-    -- game:setinterval(function()
-    --     -- game:ontimeout(function()
-    --        player:clientiprintlnbold(game:distance(oldorg, player.origin) < 2.5)
-    --    end, 5000)
+
     
 end)
 
@@ -42,14 +37,15 @@ end
 
 function applySnip(player)
     currCamo = tostring(randomCamo())
+     if player:getcurrentweapon() ~= "h1_m40a3_mp_a#none_f#base_"..currCamo.."" then
     game:ontimeout(function()
         player:takeallweapons()
         removePerks(player)
         player:giveweapon("h1_m40a3_mp_a#none_f#base_"..currCamo.."")
         player:giveweapon("h1_m40a3_mp_a#acog_f#base_"..currCamo.."")
-        player:clientiprintln("not ^1allowed "..currCamo.."")
         
         player:switchtoweapon("h1_m40a3_mp_a#none_f#base_"..currCamo.."")
         end, 500)
+    end
 end
 -- init()
