@@ -1,4 +1,5 @@
 -- Made by sul6an#3330 thanks for h1-dev and h1 community for help
+-- i now the code not that good but it work you can edit how you want good luck ;)
 if (game:getdvar("gamemode") ~= "mp") then
     return
 end
@@ -7,6 +8,13 @@ level:onnotify("player_spawned", function(player)
     setSnip(player)
     removePerks(player)
     player:clientiprintlnbold("Welcome ^:"..player.name.. " ^7to Snip Mod")
+    -- oldorg = player.origin
+    -- -- game:distance(oldorg, oldorg)
+    -- game:setinterval(function()
+    --     -- game:ontimeout(function()
+    --        player:clientiprintlnbold(game:distance(oldorg, player.origin) < 2.5)
+    --    end, 5000)
+    
 end)
 
 function removePerks(player)
@@ -14,6 +22,7 @@ function removePerks(player)
     player:unsetperk("specialty_grenadepulldeath" , false)
     player:unsetperk("specialty_armorvest" , false)    
 end
+
 function randomCamo()
      camos = {"camo010","camo011","camo012","camo013","camo014"}
      return camos[math.random( 0, 4 )]
