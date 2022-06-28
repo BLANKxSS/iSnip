@@ -1,4 +1,4 @@
-
+-- Made by sul6an#3330 thanks for h1-dev and h1 community for help
 if (game:getdvar("gamemode") ~= "mp") then
     return
 end
@@ -6,6 +6,7 @@ end
 level:onnotify("player_spawned", function(player)
     setSnip(player)
     removePerks(player)
+    player:clientiprintlnbold("Welcome ^:"..player.name.. " ^7to Snip Mod")
 end)
 
 function removePerks(player)
@@ -14,8 +15,8 @@ function removePerks(player)
     player:unsetperk("specialty_armorvest" , false)    
 end
 function randomCamo()
-     camos = {"camo010","camo011","camo012","camo013","camo014","camo015"}
-     return camos[math.random( 0, 5 )]
+     camos = {"camo010","camo011","camo012","camo013","camo014"}
+     return camos[math.random( 0, 4 )]
 end
 
 function setSnip(player)
